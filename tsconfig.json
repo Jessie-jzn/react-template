@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+      "module": "esnext",
+      "target": "es5",
+      "lib": [
+        "es5", "dom", "es2015.promise", "es2015.core", "es2015.collection", "es2016.array.include"
+      ],   
+      "sourceMap": false,
+      "declaration": true,
+      "removeComments": false, // 删除所有的注释
+      "experimentalDecorators": true,  //启用实验性的ES装饰器。
+      "allowSyntheticDefaultImports": true, // 允许从没有设置默认导出的模块中默认导入
+      "importHelpers": true, // 从 tslib 导入辅助工具函数
+      "noUnusedLocals": true, // 若有未使用的局部变量则抛错。
+      "noUnusedParameters": true, // 若有未使用的参数则抛错。
+      "noImplicitThis": true, // 当 this表达式的值为 any类型的时候，生成一个错误
+      "noFallthroughCasesInSwitch": true, // 不允许switch的case语句贯穿
+      "noImplicitReturns": true, // 不是函数的所有返回路径都有返回值时报错
+      "noImplicitAny": true, // 在表达式和声明上有隐含的 any类型时报错
+      "strict": true,
+      "strictNullChecks": true,// 在严格的 null检查模式下， null和 undefined值不包含在任何类型里，只允许用它们自己和 any来赋值
+      "strictPropertyInitialization": true, // 确保类的非undefined属性已经在构造函数里初始化
+      "rootDir": ".",
+      "baseUrl": "src",
+      "outDir": "dist",  
+    },
+    "include": [
+      "src",
+    ]
+}
+  
