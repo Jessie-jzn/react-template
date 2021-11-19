@@ -1,0 +1,28 @@
+{
+  "ignore": [
+    "package-lock.json",
+    "README.md",
+    "node_modules"
+  ],
+  "linters": {
+    "*.ts": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.js": [
+      "prettier --write",
+      "eslint --cache --fix",
+      "git add"
+    ],
+    "*.tsx": [
+      "prettier --write",
+      "eslint --cache --fix",
+      "git add"
+    ],
+    "*.{json,md,yml,css}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
