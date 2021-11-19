@@ -4,41 +4,47 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@babel/plugin-transform-runtime": "^7.16.4",
-    "autoprefixer": "^10.4.0",
     "chalk": "^4.1.2",
     "clean-webpack-plugin": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "mddir": "^1.1.1",
     "mini-css-extract-plugin": "^2.4.5",
-    "postcss-loader": "^6.2.0",
+    "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-hot-loader": "^4.13.0",
     "react-redux": "^7.2.6",
-    "typescript": "^4.4.4",
-    "webpack": "^5.64.1",
-    "webpack-cli": "^4.9.1"
+    "sass-loader": "^12.3.0",
+    "start": "^5.1.0",
+    "typescript": "^4.5.2"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
+    "@babel/plugin-transform-runtime": "^7.16.4",
     "@babel/preset-env": "^7.16.4",
+    "@types/react": "^17.0.35",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-redux": "^7.1.20",
+    "autoprefixer": "^10.4.0",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",
+    "postcss-loader": "^6.2.0",
     "progress-bar-webpack-plugin": "^2.1.0",
     "speed-measure-webpack-plugin": "^1.5.0",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.2.6",
+    "webpack": "^5.64.1",
     "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.5.0",
     "webpack-merge": "^5.8.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --mode development",
+    "build": "webpack --config webpack.common.js",
     "start": "webpack serve --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "release": "webpack serve --config webpack.prod.js"
   },
   "author": "",
   "license": "ISC"
+
 }

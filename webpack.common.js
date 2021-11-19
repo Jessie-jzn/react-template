@@ -3,16 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const chalk = require("chalk");
 const ProgressBarPlugin = require("progress-bar-webpack-plugin");
-// == 变量
-const paths = {
-  src: path.resolve(__dirname, "src"),
-  html: path.resolve(__dirname, "src/index.html"),
-  css: path.resolve(__dirname, "src/common/styles"),
-  utils: path.resolve(__dirname, "src/common/utils/"),
-  hooks: path.resolve(__dirname, "src/common/hooks/"),
-  components: path.resolve(__dirname, "src/components"),
-  vendor: "dist/vendor.*.js",
-};
+
 // 公用基础配置
 module.exports = {
   // 入口
@@ -25,11 +16,11 @@ module.exports = {
   // 路径别名
   resolve: {
     alias: {
-      src: paths.src,
-      utils: paths.utils,
-      components: paths.components,
+      src: path.resolve(__dirname, "src"),
+      utils: path.resolve(__dirname, "src/common/utils/"),
+      components: path.resolve(__dirname, "src/components"),
     },
-    extensions: [".js,'.tsx"],
+    extensions: [".js", ".tsx"],
   },
   // 打包环境，默认开发
   mode: "development",
@@ -38,20 +29,11 @@ module.exports = {
     rules: [
       {
         test: /\.s?css$/,
-        include: [paths.css, /node_modules/],
         use: [
           "style-loader",
           "css-loader",
+          "postcss-loader",
           "sass-loader",
-          {
-            loader: "postcss-loader",
-            options: {
-              postcssOptions: {
-                plugins: ["autoprefixer"],
-              },
-              execute: true,
-            },
-          },
         ],
       },
       {
@@ -88,7 +70,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: paths.html,
+      template: path.resolve(__dirname, "src/index.html"),
     }),
     new CleanWebpackPlugin(),
     new ProgressBarPlugin({

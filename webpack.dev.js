@@ -1,4 +1,5 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { merge } = require("webpack-merge");
 const common = require("./webpack.common");
 const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
@@ -6,7 +7,7 @@ const smp = new SpeedMeasurePlugin();
 // 开发环境
 module.exports = smp.wrap(merge(common, {
   mode: 'development',
-  entry: path.resolve(__dirname, "./src/index.js"),
+  entry: path.resolve(__dirname, "src"),
   devtool: "eval-cheap-module-source-map",
   cache: {
     type: 'filesystem', // 使用文件缓存
@@ -19,6 +20,9 @@ module.exports = smp.wrap(merge(common, {
     compress: true, // 是否开启代码压缩
   },
   plugins: [
-   
+    new HtmlWebpackPlugin({
+      filename: "index.html",
+      template: path.resolve(__dirname, "src/index.html"),
+    }),
   ],
 }));
