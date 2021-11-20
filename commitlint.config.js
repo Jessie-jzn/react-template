@@ -1,22 +1,34 @@
 module.exports = {
   extends: ['@commitlint/config-conventional'],
   // 以下时我们自定义的规则
-  rules: {
-    'type-enum': [
-      2,
-      'always',
-      [
-        'bug', // 此项特别针对bug号，用于向测试反馈bug列表的bug修改情况
-        'feat', // 新功能（feature）
-        'fix', // 修补bug
-        'docs', // 文档（documentation）
-        'style', // 格式（不影响代码运行的变动）
-        'refactor', // 重构（即不是新增功能，也不是修改bug的代码变动）
-        'test', // 增加测试
-        'chore', // 构建过程或辅助工具的变动
-        'revert', // feat(pencil): add ‘graphiteWidth’ option (撤销之前的commit)
-        'merge' // 合并分支， 例如： merge（前端页面）： feature-xxxx修改线程地址
-      ]
-    ]
-  }
+  types: [
+    { value: 'feat', name: 'feat:     新增功能' },
+    { value: 'build', name: 'build:    打包发布' },
+    { value: 'css', name: 'css:      修改样式' },
+    { value: 'update', name: 'update:   功能优化' },
+    { value: 'fix', name: 'fix:      修复Bug' },
+    { value: 'utils', name: 'utils:    工具方法' },
+    { value: 'merge', name: 'merge:    合并代码' },
+    { value: 'docs', name: 'docs:     文档变更' },
+    { value: 'refactor', name: 'refactor: 代码重构', },
+    { value: 'perf', name: 'perf:     改善性能', },
+    { value: 'test', name: 'test:     测试用例' },
+    { value: 'revert', name: 'revert:   代码回退' },
+    { value: 'style', name: 'style:    代码格式', },
+    { value: 'chore', name: 'chore:    变更项目构建或外部依赖', },
+    { value: 'WIP', name: 'WIP:      正在施工' },
+    { value: 'modules', name: 'modules:  依赖更新' },
+  ],
+  messages: {
+    type: "选择提交的类型：",
+    customScope: '输入提交影响的范围，如某个模块、功能或组件(可选)：',
+    subject: '输入简短的描述：',
+    body: '输入详细的描述，用"|"换行(可选)：',
+    breaking: '当前版本与上个版本不兼容的地方(可选)：',
+    footer: '此次提交修复的缺陷，如：#31, #34(可选)',
+    confirmCommit: '确认提交？',
+  },
+  allowCustomScopes: true,
+  skipQuestions: ['body', 'breaking', 'footer'],
+  subjectLimit: 100,
 }
