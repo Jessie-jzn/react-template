@@ -7,7 +7,7 @@ const ProgressBarPlugin = require("progress-bar-webpack-plugin");
 // 公用基础配置
 module.exports = {
   // 入口
-  entry: path.resolve(__dirname, "./src/index.js"),
+  entry: path.resolve(__dirname, "./src/index.tsx"),
   // 输出文件名
   output: {
     path: path.resolve(__dirname, "dist"), // 目标输出目录 path 的绝对路径
@@ -19,8 +19,9 @@ module.exports = {
       src: path.resolve(__dirname, "src"),
       utils: path.resolve(__dirname, "src/common/utils/"),
       components: path.resolve(__dirname, "src/components"),
+      style: path.resolve(__dirname, "src/common/style/"),
     },
-    extensions: [".js", ".tsx"],
+    extensions: ['.ts', '.tsx', '.js', '.json'],
   },
   // 打包环境，默认开发
   mode: "development",

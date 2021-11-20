@@ -23,7 +23,9 @@
       "strictPropertyInitialization": true, // 确保类的非undefined属性已经在构造函数里初始化
       "rootDir": ".",
       "baseUrl": "src",
-      "outDir": "dist",  
+      "outDir": "dist", 
+      "jsx": "react", // 在 .tsx 文件里支持 jsx
+      "moduleResolution": "node",
     },
     "include": [
       "src",

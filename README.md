@@ -1,6 +1,7 @@
 # react-template
 
 > 基于TypeScript的React模版
+详细文档：<a href='https://juejin.cn/post/7031821096898953223/' target='_blank'>保姆级构建React+TypeScript+Webpack5项目</a>
 
 ## 快速上手
 
