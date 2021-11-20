@@ -5,3 +5,4 @@ npm run lint --allow-empty "$1"
 
 # npm lint-staged --allow-empty "$1"
 
+npm run lint
