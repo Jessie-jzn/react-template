@@ -14,6 +14,7 @@ npm run dev
 ```
 
 ## git 提交规范
+```bash
 'bug', // 此项特别针对bug号，用于向测试反馈bug列表的bug修改情况
 'feature', // 新功能（feature）
 'fix', // 修补bug
@@ -24,7 +25,7 @@ npm run dev
 'chore', // 构建过程或辅助工具的变动
 'revert', // feat(pencil): add ‘graphiteWidth’ option (撤销之前的commit)
 'merge' // 合并分支， 例如： merge（前端页面）： feature-xxxx修改线程地址
-
+```
 
 ## 其他
 
