@@ -6,6 +6,7 @@
       "lib": [
         "es5", "dom", "es2015.promise", "es2015.core", "es2015.collection", "es2016.array.include"
       ],   
+      "esModuleInterop": true,// 允许export=导出，由import from 导入
       "sourceMap": false,
       "declaration": true,
       "removeComments": false, // 删除所有的注释
@@ -29,6 +30,7 @@
     },
     "include": [
       "src",
+      "*.d.ts"//配置的.d.ts文件，用于定义一些 declare
     ]
 }
   
